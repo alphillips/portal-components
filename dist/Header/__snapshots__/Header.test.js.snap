@@ -2,6 +2,6 @@
 
 exports[`Header renders properly 1`] = `
 <div>
-  This is the header!
+  This is the header!!
 </div>
 `;
