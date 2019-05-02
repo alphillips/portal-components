@@ -1,10 +1,13 @@
 {
   "name": "portal-components",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react-test-renderer": "^16.8.6"
-  },
+  "main": "dist/index.js",
+    "module": "dist/index.js",
+    "files": [ "dist", "README.md" ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/alphillips/portal-components"
+    },
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
@@ -34,6 +37,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "react-test-renderer": "^16.8.6"
   }
 }
