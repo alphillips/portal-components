@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <script>
+
+      /*
+
+      This page needs to be added to the domain https://my.expertconnect.global/ to be used the <SSO /> component
+
+      window.localStorage.setItem('reduxPersist:auth',JSON.stringify({"loading":false,"loaded":true,"loggedIn":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJleUp3Y205MmFXUmxja2xFSWpvaVkzSmxaR1Z1ZEdsaGJITWlMQ0p3Y205MmFXUmxja3RsZVNJNkltRnNjR2hwYkd4cGNITXhNREZBWjIxaGFXd3VZMjl0SW4wPSIsImlzcyI6ImQ2MXBsdXMiLCJleHAiOjE1NTY4ODM3MzgsImlhdCI6MTU1Njg0MDUzOCwianRpIjoiZTBlYmZiZjk1OWJjNjdiNjE0MWFmMDUwOTZkNGUwMzMzY2VjZTc5MDE0NzczYTExYjFkZTA5MjdmZjVlYWEzODY0ZDE5NWU3ZGM2NDY5ZGRiNDhlMGYzZDY2ZDAxMjFlMGJmYzE4MjU2NzdlMmNmNDc2NzYzNDc3MWZiNjQ5MTNiYzA0MWUyY2JlMDQwNjBjMWRkMTU2NGNkNDZiY2E0OTE1MWNmM2FiN2RiNmEwMDI1NzE3ZmIwMjM2ZDkwMmJlMzM3NWRmMjRiNDkzMjUxMWZhMjM1NDQyYzU1ZmM0MzU0MjEyN2RkODc4YmJhNWQ0ZWYyMmFhNTljOTIzN2VhNiJ9.-1YfxOosvVkOROvuNYjrb2n7X3aSL6HrX3FKoXm4CC4","provider":"credentials","currentUser":{"name":"Al Phillips","role":0}}))
+
+      JSON.parse(window.localStorage.getItem('reduxPersist:auth'))
+
+      */
+
+      document.addEventListener("DOMContentLoaded", function(){
+
+        var ssoObj = window.localStorage.getItem('reduxPersist:auth')
+        if(ssoObj){
+          ssoObj = JSON.parse(ssoObj);
+          window.parent.postMessage({
+            sso:ssoObj
+          }, "*");
+        }
+
+      });
+    </script>
+  </body>
+</html>

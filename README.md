@@ -37,3 +37,12 @@ import YourComponent from './YourComponent/YourComponent.js'
 
 export {Header, Footer, YourComponent}
 ```
+
+## Publish
+Run
+```
+npm run build
+```
+Update the version in package.json
+
+Then commit the changes.
