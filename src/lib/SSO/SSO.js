@@ -1,10 +1,8 @@
 import React from "react";
 
 class SSO extends React.Component {
-  
-  componentDidMount() {
-    this.el = React.createRef();
 
+  componentDidMount() {
     if (window.addEventListener) {
         window.addEventListener("message", this.onMessage, false);
     } else if (window.attachEvent) {
@@ -18,8 +16,8 @@ class SSO extends React.Component {
       //   return;
 
       var data = event.data;
-      if(data.sso){
-        console.log(data.sso)
+      if(data.authInfo){
+        console.log(data.authInfo)
         // send data to the store
       }
 
@@ -27,7 +25,6 @@ class SSO extends React.Component {
 
   render() {
     return <iframe
-      ref={el => this.el = el}
       tabIndex="-1"
       aria-hidden="true"
       style={{position:"absolute", width: "9em", height: "9em", top: "-99em"}}

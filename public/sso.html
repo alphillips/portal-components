@@ -17,11 +17,11 @@
 
       document.addEventListener("DOMContentLoaded", function(){
 
-        var ssoObj = window.localStorage.getItem('reduxPersist:auth')
-        if(ssoObj){
-          ssoObj = JSON.parse(ssoObj);
+        var authInfo = window.localStorage.getItem('reduxPersist:auth')
+        if(authInfo){
+          authInfo = JSON.parse(authInfo);
           window.parent.postMessage({
-            sso:ssoObj
+            authInfo:authInfo
           }, "*");
         }
 
